@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
-import axios from 'axios'
+import axios from 'axios';
 import { useEffect, useState } from 'react';
-function App() {
+import EmployeeTable from './components/EmployeeTable';
+
+export default function App() {
   const [employees, setEmployees] = useState([])
   useEffect(() => {
     axios.get('https://randomuser.me/api/?results=10&nat=us').then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       setEmployees([...response.data.results]);
     })
   }, [])
+  // console.log(employees)
   return (
-    <div className="App">
-      {employees.map((employee) => {
-        return (
-          <h1>{employee.name.first} {employee.name.last}</h1>
-        )})
-      }
+    <>
+    <div className="container">
+      <EmployeeTable employees={employees}/>
     </div>
+    </>
   );
 }
 
-export default App;
