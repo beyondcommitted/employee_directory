@@ -5,7 +5,7 @@ const SearchBar = ({ handleChange }) => {
 // console.log(handleChange)
     return (
         <form>
-            <input className='form-control' placeholder="Last name" onChange={handleChange}/> 
+            <input className='form-control' placeholder="Search By Last Name" onChange={handleChange}/> 
         </form>
     )
 }
