@@ -10,12 +10,14 @@ export default function EmployeeTable({employees}) {
       setTerm(event.target.value.toLowerCase());
   }
   useEffect(() => {
-   const foundEmployees = localEmployees.filter(user => user.name.last.toLowerCase().includes(term));
+   const foundEmployees = localEmployees.filter(user => user.name.last.toLowerCase().includes(term, localEmployees));
   return setFilterEmployees(foundEmployees);
-  }, [term])
+  }, [term, localEmployees])
   useEffect(() => {
     setFilterEmployees(employees)
-  }, [employees])
+  }, [employees]);
+
+    
   return (
     <>
     <SearchBar term={term} handleChange={handleChange}/>
@@ -47,4 +49,3 @@ export default function EmployeeTable({employees}) {
     </>
   )
 }
-// export default EmployeeTable;

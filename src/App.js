@@ -7,7 +7,7 @@ import EmployeeTable from './components/EmployeeTable';
 export default function App() {
   const [employees, setEmployees] = useState([])
   useEffect(() => {
-    axios.get('https://randomuser.me/api/?results=10&nat=us').then((response) => {
+    axios.get('https://randomuser.me/api/?results=300&nat=us').then((response) => {
       // console.log(response.data);
       setEmployees([...response.data.results]);
     })
