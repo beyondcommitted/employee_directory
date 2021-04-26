@@ -1,12 +1,16 @@
 # Employee Directory
 ## Description
 ```
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+An employee or manager would benefit greatly from being able
+ to view non-sensitive data about other employees. 
+ It would be particularly helpful to be able to filter employees by name.
 ```
 ## Criteria
 ---
 ### Met Acceptance Criteria
-Given a table of random users generated from the [Random User API](https://randomuser.me/), when the user loads the page, a table of employees should render. 
+Given a table of random users generated from the
+ [Random User API](https://randomuser.me/), when 
+ the user loads the page, a table of employees should render. 
 
 The user should be able to:
 
@@ -28,12 +32,15 @@ The user should be able to:
 ## Usage
 ---
 ```
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+* As a user, I want to be able to view my entire employee
+ directory at once so that I have quick access to their information.
 ```
 ## Contributions
 ---
 ```
-If you would like to make any contributions to this application feel free to reach me at the email located in the questions section of this document.
+If you would like to make any contributions to this application
+ feel free to reach me at the email located in the questions section
+  of this document.
 ```
 
 ## License
