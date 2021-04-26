@@ -17,6 +17,9 @@ export default function EmployeeTable({employees}) {
     setFilterEmployees(employees)
   }, [employees]);
 
+  
+
+
     
   return (
     <>
@@ -27,13 +30,13 @@ export default function EmployeeTable({employees}) {
         <h1>Employees</h1>
         <tr> 
           
-          <th>Picture:</th>
-          <th>Name:</th>
-          <th>Age:</th>
-          <th>Gender:</th>
-          <th>Cell Phone:</th>
-          <th>E-mail:</th>
-          <th>Location:</th>
+          <th>Picture</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Cell Phone</th>
+          <th>E-mail</th>
+          <th>Location</th>
         </tr>
       </thead>
       <tbody>
