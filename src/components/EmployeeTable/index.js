@@ -4,10 +4,14 @@ import SearchBar from "../Search";
 export default function EmployeeTable({employees}) {
   const localEmployees = employees
   const [term, setTerm] = useState(null);
+  const [sortTerm, setSortTerm] = useState("asc");
   const [filterEmployees, setFilterEmployees] = useState(localEmployees);
   console.log(employees)
   function handleChange (event) {
       setTerm(event.target.value.toLowerCase());
+  }
+  function sortHandleChange () {
+       sortTerm === "asc" ? setSortTerm("dsc"): setSortTerm("asc")
   }
   useEffect(() => {
    const foundEmployees = localEmployees.filter(user => user.name.last.toLowerCase().includes(term, localEmployees));
@@ -16,6 +20,13 @@ export default function EmployeeTable({employees}) {
   useEffect(() => {
     setFilterEmployees(employees)
   }, [employees]);
+  useEffect(() => {
+  sortTerm === "dsc" ? setFilterEmployees([...filterEmployees].sort((a, b) => a.name.last.toLowerCase() > b.name.last.toLowerCase() ? 1 : -1
+  ))
+  : setFilterEmployees([...filterEmployees].sort((b, a) => b.name.last.toLowerCase > a.name.last.toLowerCase ? 1 : -1))
+  // eslint-disable-next-line
+  }, [sortTerm])
+  
 
   
 
@@ -24,15 +35,16 @@ export default function EmployeeTable({employees}) {
   return (
     <>
     <SearchBar term={term} handleChange={handleChange}/>
-    <div class="jumbotron jumbotron-fluid">
+    <div className="jumbotron jumbotron-fluid">
+      <h1>[Company Name] Employee Directory</h1>
     <table className="table">
       <thead> 
-        <h1>Employees</h1>
+        
         <tr> 
           
           <th>Picture</th>
-          <th>Name</th>
-          <th>Age</th>
+          <th onClick={sortHandleChange} style={{cursor:"pointer"}} className="bg-info">Name</th>
+          <th >Age</th>
           <th>Gender</th>
           <th>Cell Phone</th>
           <th>E-mail</th>
@@ -44,7 +56,7 @@ export default function EmployeeTable({employees}) {
          
         filterEmployees.map(employee => (
           <tr key={employee.email}>
-            <img src={employee.picture.thumbnail} alt={employee.name.first}/>
+            <td><img src={employee.picture.thumbnail} alt={employee.name.first}/></td>
             <td>{employee.name.first} {employee.name.last}</td>
             <td>{employee.dob.age}</td>
             <td>{employee.gender}</td>
