@@ -34,6 +34,9 @@ The user should be able to:
 ```
 * As a user, I want to be able to view my entire employee
  directory at once so that I have quick access to their information.
+ As a user I want to be able to toggle the sorting of the employee
+ diectory in a ascending or descending order(Click the highlighted 
+ name heading).
 ```
 ## Contributions
 ---
